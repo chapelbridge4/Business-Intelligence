@@ -150,21 +150,3 @@ conn.close()
 print("Script completed.")
 
 
-"""
-fallo su mysql
--- Abilita gli eventi se non sono già abilitati
-SET GLOBAL event_scheduler = ON;
-
--- Crea un evento che si verifica ogni giorno alle 3:00 AM
-CREATE EVENT my_event
-  ON SCHEDULE
-    EVERY 1 DAY
-    STARTS (CURRENT_DATE + INTERVAL 3 HOUR) 
-  DO
-    -- La tua query da eseguire
-    UPDATE tua_tabella SET tuo_campo = nuovo_valore WHERE tua_condizione;
-    
-[mysqld]
-event_scheduler=ON
-
-"""
