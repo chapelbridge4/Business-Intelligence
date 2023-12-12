@@ -1,0 +1,55 @@
+# ETL Script for ERP Data Import
+
+## Overview
+This Python script serves as an ETL (Extract, Transform, Load) tool for importing data from ERP (Enterprise Resource Planning) systems into a MySQL database. The script is designed to handle JSON data files representing capacity ledger entries and item ledger entries.
+
+## Prerequisites
+Before running the script, ensure the following prerequisites are met:
+
+1. **MySQL Database:**
+   - MySQL server is running.
+   - Configure the MySQL connection details in the script (`host`, `user`, `password`, `database`).
+
+2. **JSON Data Files:**
+   - Place the JSON data files (`Capacity_Ledger_Entries.json` and `Item_Ledger_Entries.json`) in the specified directory (`testing/` in this example).
+
+3. **Python Libraries:**
+   - Install the required Python libraries using:
+     ```bash
+     pip install mysql-connector-python
+     ```
+
+## Usage
+
+1. **Script Execution:**
+   - Run the script by executing the Python file:
+     ```bash
+     python etl_script.py
+     ```
+2. **Database and Tables Creation:**
+   - The script initializes a MySQL database (`labint`) if it doesn't exist.
+   - Two tables (`capacity` and `item`) are created within the database.
+
+3. **Data Loading:**
+   - Data from JSON files is read and inserted into the corresponding database tables.
+
+4. **Configuration:**
+   - Customize the MySQL connection details and file paths in the script as needed.
+
+## Database Tables
+
+### 1. Capacity Table
+   - Fields:
+     - `id`: Primary key (auto-incremented)
+     - Various fields for capacity ledger entries.
+
+### 2. Item Table
+   - Fields:
+     - `id`: Primary key (auto-incremented)
+     - Various fields for item ledger entries.
+
+## JSON Data Files
+   - Ensure that JSON data files (`Capacity_Ledger_Entries.json` and `Item_Ledger_Entries.json`) adhere to the expected format.
+
+## Conclusion
+This script facilitates the extraction, transformation, and loading of ERP data into a MySQL database, providing a structured approach for managing and analyzing data from your ERP system. Customize the script according to your specific ERP data structure and requirements.
